@@ -35,9 +35,13 @@ config = {
     }
 }
 
+# Página de errores personalizada
+cherrypy.config.update({
+    'error_page.default': os.path.join(TEMPLATES_DIR, 'error.html')
+})
+
+# Define la aplicación para WSGI
+cherrypy_application = cherrypy.Application(MyApp(), '/', config)
+
 if __name__ == '__main__':
-    # Página de errores personalizada
-    cherrypy.config.update({
-        'error_page.default': os.path.join(TEMPLATES_DIR, 'error.html')
-    })
     cherrypy.quickstart(MyApp(), '/', config)
