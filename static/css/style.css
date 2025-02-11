@@ -50,23 +50,36 @@ nav ul li a:hover {
 }
 
 /* Breadcrumbs */
-.breadcrumbs {
-    margin: 15px;
-    font-size: 0.9em;
-    color: #666;
-    display: flex;
-    align-items: center;
+.breadcrumb {
+   
+    padding: 8px 15px;
+    border-radius: 4px;
+    list-style: none;
 }
 
-.breadcrumbs a {
-    color: #013220;
+.breadcrumb-item {
+    display: inline-block;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+.breadcrumb-item a {
+    color: #ffffff;
     text-decoration: none;
-    margin-right: 5px;
 }
 
-.breadcrumbs a:hover {
+.breadcrumb-item a:hover {
     text-decoration: underline;
 }
+
+.breadcrumb-item.active {
+    color: #ffffff;
+}
+
 
 /* Contenedor principal */
 .container {
@@ -150,6 +163,32 @@ textarea {
 main {
     margin-top: 80px;
 }
+/* Estilo para el contenedor de botones */
+.error-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 30px;
+}
+
+/* Estilo para los botones con fondo rojo */
+.error-btn {
+    background-color: #FF0000; /* Fondo rojo */
+    color: #FFFFFF; /* Texto blanco */
+    border: none;
+    padding: 10px 20px; /* Tamaño del botón */
+    font-size: 16px;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor cuando pases sobre el botón */
+    transition: background-color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Cambio de color al pasar el ratón (hover) */
+.error-btn:hover {
+    background-color: #cc0000; /* Rojo más oscuro al pasar el ratón */
+}
+
+
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -164,5 +203,9 @@ main {
 
     nav ul li {
         margin-bottom: 10px;
+    }
+    .error-buttons {
+        flex-direction: column; /* Coloca los botones en columna en pantallas pequeñas */
+        gap: 10px;
     }
 }

@@ -25,7 +25,8 @@ class MyApp:
                 error = "La edad debe ser un número."
         template = env.get_template('form.html')
         return template.render(name=name, age=age, error=error)
-
+    
+    
 # Configuración general
 config = {
     '/': {
